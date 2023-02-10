@@ -5,11 +5,7 @@ let dobs = document.getElementById("dob");
 dobs.addEventListener('input', () => dobValidity(dobs));
 
 function dobValidity(dobs) {
-    let dob = dobs.value;
-    let currentDate = new Date();
-    let currentYear = currentDate.getFullYear();
-    let dobYear = dob.split("-")[0];
-    let age = currentYear - dobYear;
+    let age = new Date().getFullYear() - new Date(dobs.value).getFullYear();
 
     
     let ageCheck = age >= 18 && age <= 55;
